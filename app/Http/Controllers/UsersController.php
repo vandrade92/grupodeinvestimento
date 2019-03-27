@@ -70,7 +70,7 @@ class UsersController extends Controller
     {
         $request = $this->service->store($request->all());
         $usuario = $request['success'] ? $request['data'] : null;
-        
+
       session()->flash('success', [
           'success'    => $request['success'],
           'messages'   => $request['messages'],
@@ -111,8 +111,9 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = $this->repository->find($id);
-
-        return view('users.edit', compact('user'));
+        return view('user.edit', [
+            'user'=> $user
+        ]);
     }
 
     /**
@@ -125,37 +126,32 @@ class UsersController extends Controller
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        try {
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
+        //Tratando valores antes de enviar pro service.
+        $value = $request->except('cpf','birth','phone');
+        $value['cpf'] = str_replace(['.','-'], '', $request->input('cpf'));
+        $value['phone'] = preg_replace("/[^a-zA-Z0-9]+/", "", $request->input('phone'));
+        $birth = explode('/', $request->input('birth'));
+        if(count($birth) == 3){
+        $value['birth'] = $birth[2] . "-" . $birth[1] . "-" . $birth[0];
+        }else {$value['birth'] = "";}
+        $request['cpf'] = $value['cpf'];
+        $request['phone'] = $value['phone'];
+        $request['birth'] = $value['birth'];
 
-            $user = $this->repository->update($request->all(), $id);
 
-            $response = [
-                'message' => 'User updated.',
-                'data'    => $user->toArray(),
-            ];
+        $request = $this->service->update($request->all(), $id);
+        $usuario = $request['success'] ? $request['data'] : null;
 
-            if ($request->wantsJson()) {
+      session()->flash('success', [
+          'success'    => $request['success'],
+          'messages'   => $request['messages'],
+        ]);
 
-                return response()->json($response);
-            }
 
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
-        }
+        return redirect()->route('user.index');
     }
 
 

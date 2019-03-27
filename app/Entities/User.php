@@ -11,51 +11,16 @@ class User extends Authenticatable
     use Notifiable;
     #use SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-      'cpf',
-      'name',
-      'phone',
-      'birth',
-      'gender',
-      'notes',
-      'email',
-      'password',
-      'status',
-      'permission'
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    /**
-     *
-     *
-     * @var array
-     */
+    protected $fillable = ['cpf','name','phone','birth','gender','notes','email','password', 'status','permission'];
+    protected $hidden = ['password', 'remember_token'];
+    protected $casts = ['email_verified_at' => 'datetime',];
     protected $table = 'users';
-
-
     public $timestamps = true;
+
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class, 'user_groups');
+    }
 
     public function setPasswordAtrribute($value)
     {

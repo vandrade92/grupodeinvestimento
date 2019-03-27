@@ -16,15 +16,21 @@
          $(".phone").mask("(00) 0000-00009")
       }
     })
-
     $(".birth").mask("00/00/0000")
+    let date = document.getElementById("birth").getAttribute("value");
+    date = date.split("-").reverse().join("/");
+    console.log(date);
+    $('input[name=birth]').val(date);
+
+
+
   })
 </script>
 @endsection
 
 @section('conteudo-view')
 
-  {{-- Início Formulário de Cadastro de Usuários--}}
+  {{-- Início Formulário de Edição de Usuários--}}
   @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
        {{ session('success')['messages'] }}
@@ -34,14 +40,9 @@
   </div>
   @endif
 
-  {{ Form::open(['route' => 'user.store', 'method' => 'post', 'class' => 'form-padrao']) }}
+  {{ Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-padrao']) }}
     @include('user.form-field')
-    @include('templates.formularios.submit', ['input' => 'Cadastrar'])
+    @include('templates.formularios.submit', ['input' => 'Atualizar'])
   {{ Form::close() }}
-  {{-- Fim Formulário de Cadastro de Usuários--}}
-
-  {{-- Início Listagem de Usuários--}}
-  @include('user.list',['user_list' => $users])
-  {{-- Fim Listagem de Usuários--}}
-
+  {{-- Fim Formulário de Edição de Usuários--}}
 @endsection
