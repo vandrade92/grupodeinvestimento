@@ -1,4 +1,4 @@
 <label class="{{ $class ?? null}}">
   <span>{{ $label ?? $select ?? "ERRO" }}</span>
-  {!! Form::select($select, $attributes ?? []); !!}
+  {!! Form::select($select, $data ?? [], $attributes); !!}
 </label>

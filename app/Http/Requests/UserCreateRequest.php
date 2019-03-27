@@ -40,8 +40,11 @@ class UserCreateRequest extends FormRequest
 
         $input['cpf'] = preg_replace("/[^a-zA-Z0-9]+/", "", $input['cpf']);
         $input['phone'] = preg_replace("/[^a-zA-Z0-9]+/", "", $input['phone']);
+
         $birth = explode('/', $input['birth']);
+        if(count($birth) == 3){
         $input['birth'] = $birth[2] . "-" . $birth[1] . "-" . $birth[0];
+        }else {$birth = "";}
 
         $this->replace($input);
     }

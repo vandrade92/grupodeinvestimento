@@ -19,11 +19,6 @@
 
     $(".birth").mask("00/00/0000")
   })
-
-    $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-      $("#success-alert").slideUp(500);
-    });
-
 </script>
 @endsection
 
@@ -74,7 +69,7 @@
          <td class="cpf">{{$user->cpf}}</td>
          <td>{{$user->name}}</td>
          <td class="phone">{{$user->phone}}</td>
-         <td>{{Carbon\Carbon::parse($user->birth)->format('d/m/Y')}}</td>
+         <td>{{$user->birth ? Carbon\Carbon::parse($user->birth)->format('d/m/Y') : null}}</td>
          <td>{{$user->email}}</td>
          <td>{{$user->status}}</td>
          <td>{{$user->permission}}</td>

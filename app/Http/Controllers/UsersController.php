@@ -70,7 +70,7 @@ class UsersController extends Controller
     {
         $request = $this->service->store($request->all());
         $usuario = $request['success'] ? $request['data'] : null;
-
+        
       session()->flash('success', [
           'success'    => $request['success'],
           'messages'   => $request['messages'],
