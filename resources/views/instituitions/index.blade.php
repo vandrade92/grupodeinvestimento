@@ -4,11 +4,12 @@
 
   {{-- Início Formulário de Cadastro de Instituições--}}
   @if(session('success'))
-    <div class="alert alert-success">
-   {{ session('success')['messages'] }}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+       {{ session('success')['messages'] }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
   </div>
-
-
   @endif
 
   {{ Form::open(['route' => 'instituitions.store', 'method' => 'post', 'class' => 'form-padrao']) }}

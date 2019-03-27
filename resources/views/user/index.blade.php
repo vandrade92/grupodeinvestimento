@@ -20,6 +20,10 @@
     $(".birth").mask("00/00/0000")
   })
 
+    $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+      $("#success-alert").slideUp(500);
+    });
+
 </script>
 @endsection
 
@@ -27,11 +31,12 @@
 
   {{-- Início Formulário de Cadastro de Usuários--}}
   @if(session('success'))
-    <div class="alert alert-success">
-   {{ session('success')['messages'] }}
-</div>
-
-
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+       {{ session('success')['messages'] }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
   @endif
 
   {{ Form::open(['route' => 'user.store', 'method' => 'post', 'class' => 'form-padrao']) }}
@@ -40,7 +45,7 @@
     @include('templates.formularios.input', ['input' => 'phone', 'attributes'=>['placeholder' => 'Telefone', 'class'=>'phone']])
     @include('templates.formularios.input', ['input' => 'email', 'attributes'=>['placeholder' => 'E-mail']])
     @include('templates.formularios.input', ['input' => 'birth', 'attributes'=>['placeholder' => 'Data de Nascimento', 'class'=>'birth']])
-    @include('templates.formularios.select', ['input'=> 'gender', 'attributes' =>['M'=>'Masculino', 'F'=>'Feminino']])
+    @include('templates.formularios.select', ['select'=> 'gender', 'attributes' =>['M'=>'Masculino', 'F'=>'Feminino']])
     @include('templates.formularios.password', ['input' => 'password', 'attributes'=>['placeholder' => 'Senha']])
     @include('templates.formularios.submit', ['input' => 'Cadastrar'])
   {{ Form::close() }}

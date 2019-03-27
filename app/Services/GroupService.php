@@ -30,7 +30,7 @@ class GroupService
 
         return [
           'success' => true,
-          'messages' => "Grupo Cadastrado",
+          'messages' => "Grupo ".$group['name']." Cadastrado",
           'data' => $group,
         ];
       }

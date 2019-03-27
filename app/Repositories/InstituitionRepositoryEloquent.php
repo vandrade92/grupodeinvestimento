@@ -15,6 +15,12 @@ use App\Validators\InstituitionValidator;
  */
 class InstituitionRepositoryEloquent extends BaseRepository implements InstituitionRepository
 {
+
+    public function selectBoxList($descricao = 'name', $chave = 'id')
+    {
+        return $this->model->pluck($descricao, $chave)->all();
+    }
+
     /**
      * Specify Model class name
      *
@@ -44,5 +50,5 @@ class InstituitionRepositoryEloquent extends BaseRepository implements Instituit
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
 }

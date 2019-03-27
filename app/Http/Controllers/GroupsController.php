@@ -10,6 +10,8 @@ use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\GroupCreateRequest;
 use App\Http\Requests\GroupUpdateRequest;
 use App\Repositories\GroupRepository;
+use App\Repositories\InstituitionRepository;
+use App\Repositories\UserRepository;
 use App\Validators\GroupValidator;
 use App\Services\GroupService;
 
@@ -30,6 +32,8 @@ class GroupsController extends Controller
      */
     protected $validator;
     protected $service;
+    protected $instituitionRepository;
+    protected $userRepository;
 
     /**
      * GroupsController constructor.
@@ -37,11 +41,13 @@ class GroupsController extends Controller
      * @param GroupRepository $repository
      * @param GroupValidator $validator
      */
-    public function __construct(GroupRepository $repository, GroupValidator $validator, GroupService $service)
+    public function __construct(GroupRepository $repository, GroupValidator $validator, GroupService $service, InstituitionRepository $instituitionRepository, UserRepository $userRepository)
     {
-        $this->repository = $repository;
-        $this->validator  = $validator;
-        $this->service  = $service;
+        $this->repository             = $repository;
+        $this->validator              = $validator;
+        $this->service                = $service;
+        $this->instituitionRepository = $instituitionRepository;
+        $this->userRepository         = $userRepository;
     }
 
     /**
@@ -51,10 +57,14 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        $groups = $this->repository->all();
+        $groups              = $this->repository->all();
+        $user_list           = $this->userRepository->selectBoxList();
+        $institution_list    = $this->instituitionRepository->selectBoxList();
 
         return view('groups.index', [
-          'groups' => $groups,
+          'groups'              => $groups,
+          'user_list'           => $user_list,
+          'institution_list'    => $institution_list,
         ]);
     }
 
