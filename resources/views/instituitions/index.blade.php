@@ -37,6 +37,7 @@
            {!! Form::open(['route' => ['instituitions.destroy', $instituition->id], 'method' => 'DELETE']) !!}
            {!! Form::submit('Remover',['class'=>'btn btn-info btn-xs']) !!}
            {!! Form::close() !!}
+           <a href="{{route('instituitions.show', $instituition->id)}}">Detalhes</a>
          </td>
        </tr>
      @endforeach
