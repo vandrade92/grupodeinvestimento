@@ -1,0 +1,262 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"head",
+				"header\tTag"
+			],
+			[
+				"bka",
+				"background-image\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"bkac",
+				"background-color\tproperty"
+			],
+			[
+				"backgr",
+				"background-color\tproperty"
+			],
+			[
+				"opt",
+				"option\tTag"
+			],
+			[
+				"hea",
+				"header\tTag"
+			],
+			[
+				"dad",
+				"Dados_Regularizacao__c"
+			],
+			[
+				"Inspe",
+				"Fiscal_Inspetoria__c"
+			],
+			[
+				"set",
+				"setestaNaEmpresa"
+			],
+			[
+				"cli",
+				"Cliente"
+			],
+			[
+				"numero",
+				"numeroConta"
+			],
+			[
+				"cliente",
+				"Cliente"
+			],
+			[
+				"valor",
+				"valorHorasExtras"
+			],
+			[
+				"get",
+				"getTitular"
+			],
+			[
+				"gan",
+				"ganhoanual"
+			],
+			[
+				"ganh",
+				"calculaGanhoAnual"
+			],
+			[
+				"conta",
+				"contaDestino"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Vagner Andrade/Desktop/teste.html",
+		"/C/Users/Vagner Andrade/Desktop/style.css",
+		"/C/Users/Vagner Andrade/Desktop/index.html",
+		"/C/Users/Vagner Andrade/Desktop/pagina2.html",
+		"/C/Users/Vagner Andrade/Desktop/Aprovação OS.java",
+		"/C/Users/Vagner Andrade/Desktop/criarFaturamento.cls",
+		"/C/Users/Vagner Andrade/Desktop/BackUP CREA/Acompanhamentos.csv",
+		"/C/Users/Vagner Andrade/Desktop/quicklinks.json",
+		"/C/Users/Vagner Andrade/Desktop/criarFaturamentoTest.cls",
+		"/C/Users/Vagner Andrade/AppData/Local/Temp/Rar$DIa16752.49953/Alterar_Status_Notificacao_Vencida-8.flow",
+		"/C/Users/Vagner Andrade/AppData/Local/Temp/Rar$DIa16752.43221/WebServiceHandler.cls",
+		"/C/Users/Vagner Andrade/AppData/Local/Temp/Rar$DIa16752.4819/Gestao_Planejamento.permissionset",
+		"/C/Users/Vagner Andrade/Desktop/status.json",
+		"/C/Users/Vagner Andrade/Desktop/codigo meta.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Capitulo 4/ExercicioArray.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Capitulo 4/Locadora/locadora.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Capitulo 5/banco.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Capitulo 5/banco2.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Capitulo 4/Array.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Banco/banco.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/teste1.java",
+		"/C/Users/Vagner Andrade/CursoJavaOO/Locadora/locadora.java"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "phpunit.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
