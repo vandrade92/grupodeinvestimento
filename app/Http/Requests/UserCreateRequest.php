@@ -44,7 +44,7 @@ class UserCreateRequest extends FormRequest
         $birth = explode('/', $input['birth']);
         if(count($birth) == 3){
         $input['birth'] = $birth[2] . "-" . $birth[1] . "-" . $birth[0];
-        }else {$birth = "";}
+        }else {$input['birth'] = "";}
 
         $this->replace($input);
     }

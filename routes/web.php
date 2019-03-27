@@ -26,4 +26,4 @@ Route::resource('user', 'UsersController');
 Route::resource('instituitions', 'InstituitionsController');
 Route::resource('group', 'GroupsController');
 
-Route::post('group/{group_id}/user', ['as' => 'group.user.store', 'use' =>'GroupsController@userStore']);
+Route::post('group/{group_id}/user', ['as' => 'group.user.store', 'uses' => 'GroupsController@userStore']);

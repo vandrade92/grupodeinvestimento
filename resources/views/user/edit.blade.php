@@ -16,8 +16,14 @@
          $(".phone").mask("(00) 0000-00009")
       }
     })
-
     $(".birth").mask("00/00/0000")
+    let date = document.getElementById("birth").getAttribute("value");
+    date = date.split("-").reverse().join("/");
+    console.log(date);
+    $('input[name=birth]').val(date);
+
+
+
   })
 </script>
 @endsection
@@ -34,20 +40,15 @@
   </div>
   @endif
 
-  {{ Form::open(['route' => 'user.store', 'method' => 'post', 'class' => 'form-padrao']) }}
+  {{ Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-padrao']) }}
     @include('templates.formularios.input', ['input' => 'cpf', 'attributes'=>['placeholder' => 'CPF', 'class'=>'cpf']])
     @include('templates.formularios.input', ['input' => 'name', 'attributes'=>['placeholder' => 'Nome']])
     @include('templates.formularios.input', ['input' => 'phone', 'attributes'=>['placeholder' => 'Telefone', 'class'=>'phone']])
     @include('templates.formularios.input', ['input' => 'email', 'attributes'=>['placeholder' => 'E-mail']])
-    @include('templates.formularios.input', ['input' => 'birth', 'attributes'=>['placeholder' => 'Data de Nascimento', 'class'=>'birth']])
+    @include('templates.formularios.input', ['input' => 'birth', 'attributes'=>['placeholder' => 'Data de Nascimento', 'class'=>'birth', 'id' => 'birth', 'name' =>'birth']])
     @include('templates.formularios.select', ['select'=> 'gender', 'attributes' =>['M'=>'Masculino', 'F'=>'Feminino']])
     @include('templates.formularios.password', ['input' => 'password', 'attributes'=>['placeholder' => 'Senha']])
-    @include('templates.formularios.submit', ['input' => 'Cadastrar'])
+    @include('templates.formularios.submit', ['input' => 'Atualizar'])
   {{ Form::close() }}
   {{-- Fim Formulário de Cadastro de Usuários--}}
-
-  {{-- Início Listagem de Usuários--}}
-  @include('user.list',['user_list' => $users])
-  {{-- Fim Listagem de Usuários--}}
-
 @endsection
