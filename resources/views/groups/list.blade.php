@@ -21,6 +21,7 @@
          {!! Form::submit('Remover', ['class'=>'btn btn-info btn-xs']) !!}
          {!! Form::close() !!}
          <a href="{{route('group.show', $group->id)}}">Detalhes</a>
+         <a href="{{route('group.edit', $group->id)}}">Editar</a>
        </td>
      </tr>
    @endforeach

@@ -8,10 +8,11 @@
 </header>
 
 {{ Form::open(['route'=>['group.user.store', $group->id], 'method' => 'post', 'class' => 'form-padrao']) }}
-@include('templates.formularios.select', ['label' => "Usuário",
+@include('templates.formularios.select',
+['label' => "Usuário",
     'select' => 'user_id',
-    'data' => $user_list,
-    'attributes' => ['placeholder' => "Usuário"]
+    'attributes' => ['placeholder' => "Usuário"],
+    'data' => $user_list
 ])
 
 @include('templates.formularios.submit', ['input' => 'Relacionar ao Grupo ' . $group->name])

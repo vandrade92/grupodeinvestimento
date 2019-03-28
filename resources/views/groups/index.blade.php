@@ -19,8 +19,8 @@
 
     {{ Form::open(['route' => 'group.store', 'method' => 'post', 'class' => 'form-padrao']) }}
       @include('templates.formularios.input', ['label' => 'Nome do Grupo', 'input' => 'name', 'attributes'=>['placeholder' => 'Nome do Grupo']])
-      @include('templates.formularios.select', ['label' => 'Usuário', 'select' => 'user_id', 'attributes'=> $user_list])
-      @include('templates.formularios.select', ['label' => 'Instituição', 'select' => 'instituition_id', 'attributes'=> $institution_list])
+      @include('templates.formularios.select', ['label' => 'Usuário', 'select' => 'user_id', 'data'=> $user_list])
+      @include('templates.formularios.select', ['label' => 'Instituição', 'select' => 'instituition_id', 'data'=> $institution_list])
       @include('templates.formularios.submit', ['input' => 'Cadastrar'])
     {{ Form::close() }}
 
