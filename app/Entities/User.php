@@ -11,7 +11,11 @@ class User extends Authenticatable
     use Notifiable;
     #use SoftDeletes;
 
+<<<<<<< HEAD
     protected $fillable = ['cpf','name','phone','birth','gender','notes','email','password', 'status','permission'];
+=======
+    protected $fillable = ['cpf','name','phone','birth','gender','notes','email', 'status','permission'];
+>>>>>>> 83dde8a7140650d86c1bbc9d7150931e44feb609
     protected $hidden = ['password', 'remember_token'];
     protected $casts = ['email_verified_at' => 'datetime',];
     protected $table = 'users';

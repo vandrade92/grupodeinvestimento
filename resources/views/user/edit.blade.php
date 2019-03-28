@@ -30,7 +30,11 @@
 
 @section('conteudo-view')
 
+<<<<<<< HEAD
   {{-- Início Formulário de Edição de Usuários--}}
+=======
+  {{-- Início Formulário de Cadastro de Usuários--}}
+>>>>>>> 83dde8a7140650d86c1bbc9d7150931e44feb609
   @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
        {{ session('success')['messages'] }}
@@ -41,8 +45,21 @@
   @endif
 
   {{ Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-padrao']) }}
+<<<<<<< HEAD
     @include('user.form-field')
     @include('templates.formularios.submit', ['input' => 'Atualizar'])
   {{ Form::close() }}
   {{-- Fim Formulário de Edição de Usuários--}}
+=======
+    @include('templates.formularios.input', ['input' => 'cpf', 'attributes'=>['placeholder' => 'CPF', 'class'=>'cpf']])
+    @include('templates.formularios.input', ['input' => 'name', 'attributes'=>['placeholder' => 'Nome']])
+    @include('templates.formularios.input', ['input' => 'phone', 'attributes'=>['placeholder' => 'Telefone', 'class'=>'phone']])
+    @include('templates.formularios.input', ['input' => 'email', 'attributes'=>['placeholder' => 'E-mail']])
+    @include('templates.formularios.input', ['input' => 'birth', 'attributes'=>['placeholder' => 'Data de Nascimento', 'class'=>'birth', 'id' => 'birth', 'name' =>'birth']])
+    @include('templates.formularios.select', ['select'=> 'gender', 'attributes' =>['M'=>'Masculino', 'F'=>'Feminino']])
+    @include('templates.formularios.password', ['input' => 'password', 'attributes'=>['placeholder' => 'Senha']])
+    @include('templates.formularios.submit', ['input' => 'Atualizar'])
+  {{ Form::close() }}
+  {{-- Fim Formulário de Cadastro de Usuários--}}
+>>>>>>> 83dde8a7140650d86c1bbc9d7150931e44feb609
 @endsection
