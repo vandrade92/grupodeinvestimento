@@ -38,6 +38,7 @@
            {!! Form::submit('Remover',['class'=>'btn btn-info btn-xs']) !!}
            {!! Form::close() !!}
            <a href="{{route('instituitions.show', $instituition->id)}}">Detalhes</a>
+           <a href="{{route('instituitions.edit', $instituition->id)}}">Editar</a>
          </td>
        </tr>
      @endforeach
