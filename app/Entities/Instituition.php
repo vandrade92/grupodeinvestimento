@@ -21,7 +21,7 @@ class Instituition extends Model implements Transformable
 
     public function products()
     {
-        retur $this->hasMany(Product::class);
+        return $this->hasMany(Product::class);
     }
 
 

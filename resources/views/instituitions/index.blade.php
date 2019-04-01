@@ -39,6 +39,7 @@
            {!! Form::close() !!}
            <a href="{{route('instituitions.show', $instituition->id)}}">Detalhes</a>
            <a href="{{route('instituitions.edit', $instituition->id)}}">Editar</a>
+           <a href="{{route('instituition.product.index', $instituition->id)}}">Produtos </a>
          </td>
        </tr>
      @endforeach

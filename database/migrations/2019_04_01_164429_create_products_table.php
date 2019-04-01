@@ -20,13 +20,13 @@ class CreateProductsTable extends Migration
 			$table->unsignedInteger('instituition_id');
 			$table->string('name',45);
 			$table->text('description');
-			$table->text('index')
+			$table->text('index');
 			$table->decimal('interest_rate');
 
 			$table->timestampsTz();
 			$table->softDeletes();
 
-			$table->foreign('instituition_id')->references('id')->on(instituitions);
+			$table->foreign('instituition_id')->references('id')->on('instituitions');
 		});
 	}
 
