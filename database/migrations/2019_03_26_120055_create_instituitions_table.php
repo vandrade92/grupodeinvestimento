@@ -17,7 +17,7 @@ class CreateInstituitionsTable extends Migration
 	{
 		Schema::create('instituitions', function(Blueprint $table) {
             $table->increments('id');
-						$table->string('name');
+			$table->string('name');
             $table->timestamps();
 		});
 	}

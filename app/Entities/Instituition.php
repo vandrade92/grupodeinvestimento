@@ -19,5 +19,10 @@ class Instituition extends Model implements Transformable
         return $this->hasMany(Group::class);
     }
 
+    public function products()
+    {
+        retur $this->hasMany(Product::class);
+    }
+
 
 }
