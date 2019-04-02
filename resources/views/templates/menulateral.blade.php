@@ -36,4 +36,13 @@
         </li>
     </ul>
 
+    <ul>
+        <li>
+              <a href="{{route ('moviment.index') }}">
+                  <i class="fas fa-dollar-sign"></i>
+                  <h3>Aplicações</h3>
+              </a>
+        </li>
+    </ul>
+
 </nav>
