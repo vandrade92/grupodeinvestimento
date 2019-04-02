@@ -49,7 +49,6 @@ class ProductsController extends Controller
      */
     public function index($institution_id)
     {
-        $products = $this->repository->all();
         $institution = Instituition::find($institution_id);
 
         return view('instituitions.product.index', [
@@ -174,18 +173,13 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($institution_id, $product_id)
     {
-        $deleted = $this->repository->delete($id);
-
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'Product deleted.',
-                'deleted' => $deleted,
-            ]);
-        }
-
-        return redirect()->back()->with('message', 'Product deleted.');
+        $deleted = $this->repository->delete($product_id);
+        session()->flash('success', [
+            'success'    => true,
+            'messages'   => "Produto removido.",
+          ]);
+        return redirect()->back();
     }
 }
