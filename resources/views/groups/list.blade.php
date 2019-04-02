@@ -14,6 +14,7 @@
      <tr>
        <td>{{$group->id}}</td>
        <td>{{$group->name}}</td>
+       <td>R${{ number_format($group->totalValue, 2, ',','.')}}</td>
        <td>{{$group->instituition->name}}</td>
        <td>{{$group->owner->name}}</td>
        <td class="text-center">

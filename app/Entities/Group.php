@@ -27,4 +27,18 @@ class Group extends Model implements Transformable
         return $this->belongsTo(Instituition::class);
     }
 
+    public function moviments()
+    {
+         return $this->hasMany(Moviment::class);
+    }
+
+    public function getTotalValueAttribute()
+    {
+         $total = 0;
+         foreach($this->moviments as $moviment)
+              $total += $moviment->value;
+         
+         return $total;
+    }
+
 }
