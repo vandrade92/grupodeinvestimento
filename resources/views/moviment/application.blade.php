@@ -11,11 +11,10 @@
     </div>
     @endif
 
-    {{ Form::open(['route' => 'group.store', 'method' => 'post', 'class' => 'form-padrao']) }}
-
+    {{ Form::open(['route' => 'moviment.application.store', 'method' => 'post', 'class' => 'form-padrao']) }}
       @include('templates.formularios.select', ['label' => 'Grupo', 'select' => 'group_id', 'data'=> $group_list ?? [], 'attributes' => ['placeholder' => 'Grupo']])
       @include('templates.formularios.select', ['label' => 'Produto', 'select' => 'product_id', 'data'=> $product_list ?? [], 'attributes' => ['placeholder' => 'Produto']])
-      @include('templates.formularios.input',  ['label' => 'Valor', 'input' => 'name', 'attributes'=>['placeholder' => 'Valor de Investimento']])
+      @include('templates.formularios.input',  ['label' => 'Valor', 'input' => 'value', 'attributes'=>['placeholder' => 'Valor de Investimento']])
       @include('templates.formularios.submit', ['input' => 'Cadastrar'])
     {{ Form::close() }}
     {{-- Fim Formulário de Investimento--}}
