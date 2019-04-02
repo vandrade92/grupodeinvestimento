@@ -27,4 +27,13 @@
         </li>
     </ul>
 
+    <ul>
+        <li>
+              <a href="{{route ('moviment.application') }}">
+                  <i class="fas fa-money-bill-alt"></i>
+                  <h3>Investir</h3>
+              </a>
+        </li>
+    </ul>
+
 </nav>
