@@ -24,7 +24,7 @@ Route::get('/dashboard', ['as' => 'user.dashboard','uses' => 'DashboardControlle
 Route::get('user/moviment', ['as' => 'moviment.index', 'uses' => 'MovimentsController@index']);
 Route::get('moviment', ['as' => 'moviment.application', 'uses' => 'MovimentsController@application']);
 Route::post('moviment',['as' => 'moviment.application.store', 'uses' => 'MovimentsController@storeApplication']);
-
+Route::get('moviment/all', ['as' => 'moviment.all', 'uses' => 'MovimentsController@all']);
 
 Route::resource('user', 'UsersController');
 Route::resource('instituitions', 'InstituitionsController');

@@ -45,4 +45,12 @@
         </li>
     </ul>
 
+    <ul>
+        <li>
+             <a href="{{route ('moviment.all') }}">
+                  <i class="fas fa-dollar-sign"></i>
+                  <h3>Extrato</h3>
+             </a>
+        </li>
+    </ul>
 </nav>
