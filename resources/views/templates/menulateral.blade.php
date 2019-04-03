@@ -38,6 +38,15 @@
 
     <ul>
         <li>
+              <a href="{{route ('moviment.getback') }}">
+                  <i class="fas fa-money-bill-alt"></i>
+                  <h3>Resgatar</h3>
+              </a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
               <a href="{{route ('moviment.index') }}">
                   <i class="fas fa-dollar-sign"></i>
                   <h3>Aplicações</h3>

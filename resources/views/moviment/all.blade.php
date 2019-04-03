@@ -50,7 +50,7 @@
            <td></td>
            <td></td>
            <td></td>
-           <td>R${{ number_format($moviment->sum('value'), 2, ',','.')}}</td>
+           <td>R${{ number_format($moviment->applications()->sum('value') - $moviment->OutFlows()->sum('value') , 2, ',','.')}}</td>
            </tr>
 
       </tfoot>
